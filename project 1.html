@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Country Data</title>
+</head>
+
+<body>
+
+    <h2>Get Country Data</h2>
+
+    <label>Enter Country Name:</label>
+    <input type="text" id="countryName">
+    <button onclick="getCountryData()">Search</button>
+
+    <p id="result"></p>
+
+    <script>
+        function getCountryData() {
+
+            let country = document.getElementById("countryName").value.toLowerCase();
+            let data = {
+                india: { capital: "New Delhi", currency: "INR", population: "1.4 Billion" },
+                usa: { capital: "Washington, D.C.", currency: "USD", population: "331 Million" },
+                japan: { capital: "Tokyo", currency: "JPY", population: "125 Million" }
+            };
+
+            if (data[country]) {
+                document.getElementById("result").innerHTML =
+                    "Country: " + country.toUpperCase() +
+                    "<br>Capital: " + data[country].capital +
+                    "<br>Currency: " + data[country].currency +
+                    "<br>Population: " + data[country].population;
+            } else {
+                document.getElementById("result").innerHTML = "⚠ Data not found!";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

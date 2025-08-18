@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>True/False Quiz</title>
+</head>
+<body>
+
+<h2>JavaScript True/False Quiz</h2>
+
+<p>Q1: india prime minister is narendra modi (True or False?)</p>
+<button onclick="checkAnswer(1, true)">True</button>
+<button onclick="checkAnswer(1, false)">False</button>
+<p id="result1"></p>
+
+<p>Q2: strat lerning web devloaping to html is important (True or False?)</p>
+<button onclick="checkAnswer(2, true)">True</button>
+<button onclick="checkAnswer(2, false)">False</button>
+<p id="result2"></p>
+
+<p>Q3: [] is an object in JavaScript. (True or False?)</p>
+<button onclick="checkAnswer(3, true)">True</button>
+<button onclick="checkAnswer(3, false)">False</button>
+<p id="result3"></p>
+
+<p>Q4: an year in 12 months (True or False?)</p>
+<button onclick="checkAnswer(4, true)">True</button>
+<button onclick="checkAnswer(4, false)">False</button>
+<p id="result4"></p>
+
+<script>
+
+  const answers = {
+    1: true,
+    2: true,
+    3: true,
+    4: true
+  };
+
+  function checkAnswer(q, userAnswer) {
+    let result = document.getElementById("result" + q);
+    if (userAnswer === answers[q]) {
+      result.innerHTML = "✅ Correct!";
+    } else {
+      result.innerHTML = "❌ Wrong!";
+    }
+  }
+</script>
+
+</body>
+</html>
