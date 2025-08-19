@@ -1,54 +1,44 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <title>get country state</title>
+  <meta charset="UTF-8">
+  <title>Auto Country Details</title>
 </head>
-
 <body>
 
-    <h2>Get Country state name </h2>
+  <h2>Country Details</h2>
+  <div id="result"></div>
 
-    <label>Enter Country Name:</label>
-    <input type="text" id="countryName">
-    <button onclick="getCountryData()">Search</button>
+  <script>
+    let /* data is object*/data = {
+      /* india is contaion*/india: {
+        /*object*/states: ["New Delhi", "Gujarat", "Mumbai", "West Bengal"],/*arrey store with multipule value*/
+        /*object*/currency: "INR",/*string*/
+        /*object*/population: "1.4 billion"/*string*/
+      },
+      /* usa is contaion*/ usa: {
+        /*object*/states: ["Washington DC", "California", "Texas", "New York"],/*arrey store with multipule value*/
+        /*object*/currency: "USD",/*string*/
+        /*object*/population: "331 million"/*string*/
+      },
+      /* japan is contaion*/ japan: {
+        /*object*/states: ["Tokyo", "Chiba", "Chubu", "Gifu"],/*arrey store with multipule value*/
+        /*object*/currency: "JPY",/*string*/
+        /*object*/population: "125 million"/*string*/
+      }
+    };
 
-    <p id="result"></p>
+    // Show all countries automatically
+    let output = "";/*string*/
+    /*loop*/for (let country in data) {
+      output += "<b>Country:</b> " + country.toUpperCase() + "<br>";
+      output += "States: " + data[country].states.join(", ") + "<br>";
+      output += "Currency: " + data[country].currency + "<br>";
+      output += "Population: " + data[country].population + "<br><br>";
+    }/*object > arrey > string*/
 
-    <script>
-        function getCountryData() {
-
-            let country = document.getElementById("countryName").value.toLowerCase();
-            let data = {
-                /*object */india:{
-                    states: ["New Delhi", "gujarat", "mumbai", "west bengal"],//arry//
-                    curruncy: "INR",//string//
-                    populatin: "1.4 billion"//string//
-                },
-                /*object */usa: {
-                    states: ["washington dc", "califoniya", "texas", "california"],//arry//
-                        curruncy: "USD",//string//
-                        populatin: "331 million"//string//
-                },
-                /*object */japan: {
-                    states: ["tokyo", "chiba", "chubu", "gifu"],//arry//
-                    curruncy: "JPY",//string//
-                    populatin: "125 million"//string//
-                },
-            };
-
-            if (data[country]) {
-                document.getElementById("result").innerHTML =
-                    "Country: " + country.toUpperCase() +
-                    "<br>states: " + data[country].states.join(", ") +
-                    "<br>curruncy: " + data[country].curruncy +
-                    "<br>population: " + data[country].populatin;
-            } else {
-                document.getElementById("result").innerHTML = "⚠ Data not found!";
-            }
-        }
-    </script>
+    document.getElementById("result").innerHTML = output;
+  </script>
 
 </body>
-
 </html>
