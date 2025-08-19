@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Easy JS Example</title>
+</head>
+
+<body>
+    <h2>JavaScript Easy Example</h2>
+
+    <p id="output"></p>
+
+    <script>
+        const people = [
+            { name: "John", age: 30 }
+        ];
+
+        const emp = [...people];
+
+        emp[0].name = "vd";
+
+        document.getElementById("output").innerHTML =
+            "People: " + JSON.stringify(people) + "<br>" +
+            "Emp: " + JSON.stringify(emp);
+    </script>
+</body>
+
+</html>
