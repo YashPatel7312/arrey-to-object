@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>get country state</title>
+</head>
+
+<body>
+
+    <h2>Get Country state name </h2>
+
+    <label>Enter Country Name:</label>
+    <input type="text" id="countryName">
+    <button onclick="getCountryData()">Search</button>
+
+    <p id="result"></p>
+
+    <script>
+        function getCountryData() {
+
+            let country = document.getElementById("countryName").value.toLowerCase();
+            let data = {
+                /*object */india:{
+                    states: ["New Delhi", "gujarat", "mumbai", "west bengal"],//arry//
+                    curruncy: "INR",//string//
+                    populatin: "1.4 billion"//string//
+                },
+                /*object */usa: {
+                    states: ["washington dc", "califoniya", "texas", "california"],//arry//
+                        curruncy: "USD",//string//
+                        populatin: "331 million"//string//
+                },
+                /*object */japan: {
+                    states: ["tokyo", "chiba", "chubu", "gifu"],//arry//
+                    curruncy: "JPY",//string//
+                    populatin: "125 million"//string//
+                },
+            };
+
+            if (data[country]) {
+                document.getElementById("result").innerHTML =
+                    "Country: " + country.toUpperCase() +
+                    "<br>states: " + data[country].states.join(", ") +
+                    "<br>curruncy: " + data[country].curruncy +
+                    "<br>population: " + data[country].populatin;
+            } else {
+                document.getElementById("result").innerHTML = "⚠ Data not found!";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
